@@ -15,7 +15,7 @@ while video_src.isOpened():
         if bbox_info:
             lmStr = ""
             for lm in lmList:
-                lmStr += f'{lm[0]}, {lm[1]}, {lm[2]}, '
+                lmStr += f'{lm[0]}, {frame.shape[0] - lm[1]}, {lm[2]}, '
             print(lmStr)
 
         cv2.imshow("Video", frame)
