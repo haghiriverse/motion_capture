@@ -9,5 +9,10 @@ while video_src.isOpened():
 
     frame = detector.findPose(frame)
 
-    cv2.imshow("Video", frame)
+    try:
+        cv2.imshow("Video", frame)
+    except Exception as e:
+        print(e)
+        break
+    
     cv2.waitKey(1)
