@@ -10,6 +10,8 @@ while video_src.isOpened():
     try:
         frame = detector.findPose(frame)
 
+        lmList, bbox_info = detector.findPosition(frame)
+
         cv2.imshow("Video", frame)
     except Exception as e:
         print(e)
