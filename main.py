@@ -4,6 +4,8 @@ from cvzone.PoseModule import PoseDetector
 video_src = cv2.VideoCapture("video.mp4")
 
 detector = PoseDetector()
+posList  = []
+
 while video_src.isOpened():
     _, frame = video_src.read()
 
@@ -16,6 +18,7 @@ while video_src.isOpened():
             lmStr = ""
             for lm in lmList:
                 lmStr += f'{lm[1]}, {frame.shape[2] - lm[1]}, {lm[3]}, '
+            posList.append(lmStr)
 
         cv2.imshow("Video", frame)
     except Exception as e:
