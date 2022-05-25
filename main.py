@@ -26,3 +26,7 @@ while video_src.isOpened():
         break
 
     cv2.waitKey(1)
+
+with open("AnimationList.txt", "w") as f:
+    for pos in posList:
+        f.write(f'{pos}\n')
